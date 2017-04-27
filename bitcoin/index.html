@@ -45,7 +45,7 @@
                 document.getElementById("demo").innerHTML = jsonPretty;
             }
         };  
-        wsMining.open("GET", "https://bitcoin.mubiz.com/mininginfo", true);
+        wsMining.open("GET", "https://api.blockcypher.com/v1/btc/main", true);
         wsMining.send();
     </script>
 </head>
