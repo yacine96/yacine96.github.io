@@ -1,0 +1,46 @@
+var wsInfo = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = this.responseText;
+        var jsonPretty = JSON.stringify(JSON.parse(myObj),null,2);
+        document.getElementById("demo").innerHTML = jsonPretty;
+    }
+};
+wsInfo.open("GET", "https://bitcoin.mubiz.com/info", true);
+wsInfo.send();
+
+var wsBlockchain = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = this.responseText;
+        var jsonPretty = JSON.stringify(JSON.parse(myObj),null,2);
+        document.getElementById("demo").innerHTML = jsonPretty;
+    }
+};
+wsBlockchain.open("GET", "https://bitcoin.mubiz.com/blockchaininfo", true);
+wsBlockchain.send();
+
+var wsPeer = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = this.responseText;
+        var jsonPretty = JSON.stringify(JSON.parse(myObj),null,2);
+        document.getElementById("demo").innerHTML = jsonPretty;
+    }
+};
+wsPeer.open("GET", "https://bitcoin.mubiz.com/peerinfo", true);
+wsPeer.send();
+
+var wsMining = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = this.responseText;
+        var jsonPretty = JSON.stringify(JSON.parse(myObj),null,2);
+        document.getElementById("demo").innerHTML = jsonPretty;
+    }
+};
+wsMining.open("GET", "https://bitcoin.mubiz.com/mininginfo", true);
+wsMining.send();
+
+
+
