@@ -1,53 +1,17 @@
 <!DOCTYPE html>
 <head>
-    <meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width" />
-	<title>Bitcoin infos</title>
-    <script>
-        var wsInfo = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-               var myObj = this.responseText;
-               var jsonPretty = JSON.stringify(JSON.parse(myObj),null,2);
-               document.getElementById("demo").innerHTML = jsonPretty;
-                }
-        };
-        wsInfo.open("GET", "https://bitcoin.mubiz.com/info", true);
-        wsInfo.send();
-
-        var wsBlockchain = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                var myObj = this.responseText;
-                var jsonPretty = JSON.stringify(JSON.parse(myObj),null,2);
-                document.getElementById("demo").innerHTML = jsonPretty;
-                }
-        };
-        wsBlockchain.open("GET", "https://bitcoin.mubiz.com/blockchaininfo", true);
-        wsBlockchain.send();
-
-        var wsPeer = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                var myObj = this.responseText;
-                var jsonPretty = JSON.stringify(JSON.parse(myObj),null,2);
-                document.getElementById("demo").innerHTML = jsonPretty;
-            }
-        };
-        wsPeer.open("GET", "https://bitcoin.mubiz.com/peerinfo", true);
-        wsPeer.send();
-
-        var wsMining = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                var myObj = this.responseText;
-                var jsonPretty = JSON.stringify(JSON.parse(myObj),null,2);
-                document.getElementById("demo").innerHTML = jsonPretty;
-            }
-        };  
-        wsMining.open("GET", "https://api.blockcypher.com/v1/btc/main", true);
-        wsMining.send();
-    </script>
+<script>
+ var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = this.responseText;
+        var jsonPretty = JSON.stringify(JSON.parse(myObj),null,2);
+        document.getElementById("demo").innerHTML = jsonPretty;
+    }
+};
+xmlhttp.open("GET", "https://api.blockcypher.com/v1/btc/main", true);
+xmlhttp.send();
+</script>
 </head>
 <body>
     <div class="row">
