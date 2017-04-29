@@ -1,20 +1,15 @@
 <html>
-    <head>
-        <title>Test calcul surface</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript" src="javascript.js">    
-		function surface()
-        {
-            var surf = document.getElementById("surface").value;
-            alert(surf);
-        } 
-    </script>
-    </head>
-    <body>
-        <form>
-            <p>Entrez votre surface</p>
-            <input type="text" name="surface" id="surface"/><br /><br />
-            <input type="submit" onClick="surface();" />
-        </form>
-    </body>
-</html>
+<head>
+	function getHU() 
+{ 
+var hu = document.getElementById("hu").value; 
+alert(hu); 
+} 
+	</head>
+	<body>
+	
+<FORM> 
+<input type="text" name="sethu" id="hu" value="Enter code" /> 
+<input type="button" value="send HU code" onclick="getHU();" /> 
+</FORM> 
+	</body>
