@@ -2,6 +2,7 @@
 <head>
 <script>
  var xmlhttp = new XMLHttpRequest();
+ var hu = document.getElementById("inputRequete").value; 
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var myObj = this.responseText;
@@ -9,7 +10,7 @@ xmlhttp.onreadystatechange = function() {
         document.getElementById("demo").innerHTML = jsonPretty;
     }
 };
-xmlhttp.open("GET", "https://api.blockcypher.com/v1/btc/main", true);
+xmlhttp.open("GET",hu, true);
 xmlhttp.send();
 </script>
 </head>
