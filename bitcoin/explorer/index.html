@@ -1,17 +1,25 @@
 <html>
-<head>
+<body>
+	<p>Write something in the text field to trigger a function.</p>
+	<input type="text" id="myInput" oninput="myFunction()">
+	<p id="demo"></p>
 	<script>
-	function getHU() 
+	function RequeteApi(url)
 { 
-var hu = document.getElementById("hu").value; 
-alert(hu); 
-} 
-		</script>
-	</head>
-	<body>
+    var url=document.getElementById(myInput).value;
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = this.responseText;
+        var jsonPretty = JSON.stringify(JSON.parse(myObj),null,2);
+        document.getElementById("demo").innerHTML = jsonPretty;
+    }
+};
+xmlhttp.open("GET",url, true);
+xmlhttp.send();
+}
+	</script>
 	
-<FORM> 
-<input type="text" name="sethu" id="hu" placeholder="hihi" /> 
-<input type="button" value="send HU code" onclick="getHU();" /> 
-</FORM> 
+
+
 	</body>
