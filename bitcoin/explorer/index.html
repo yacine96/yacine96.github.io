@@ -1,28 +1,89 @@
 <!DOCTYPE html>
-<html>
-<body>
-
-<p>Write something in the text field to trigger a function.</p>
-
-<input type="text" id="myInput" oninput="myFunction()">
-
-<p id="demo"></p>
-
-<script>
-function myFunction() {
-    var x = document.getElementById("myInput").value;
+<html lang="fr">
+<head>
+  <title>form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var myObj = this.responseText;
         var jsonPretty = JSON.stringify(JSON.parse(myObj),null,2);
         document.getElementById("demo").innerHTML = jsonPretty;
     }
 };
-    xmlhttp.open("GET", x, true);
+xmlhttp.open("GET", "https://bitcoin.mubiz.com/mininginfo", true);
 xmlhttp.send();
-}
-</script>
-
-</body>
-</html>
-
+   </script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
     
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+  
+  
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">IF</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="https://yacine96.github.io/index.html">Home</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Explorateur Bitcoin</h1>      
+    <p>Formulaire<p>
+  </div>
+</div>
+<div class="container-fluid bg-3 text-center">
+<form>
+    <div class="form-group">
+        <label for="inputAdress">Adress</label>
+        <input type="text" class="form-control" id="inputAdress" placeholder="Adress">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputTransaction">Transaction Hash</label>
+        <input type="text" class="form-control" id="inputTransaction" placeholder="Hash">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputBlock">Block Hash</label>
+        <input type="text" class="form-control" id="inputBlock" placeholder="Hash">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputIndex">block Index</label>
+        <input type="text" class="form-control" id="inputIndex" placeholder="Block Index">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+    </div>
+  </body>
+  
+
+
+
