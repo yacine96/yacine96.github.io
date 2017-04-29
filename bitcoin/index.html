@@ -3,7 +3,7 @@
 <script>
  var xmlhttp = new XMLHttpRequest();
  var hu = document.getElementById("inputRequete").value; 
- alert(inputRequete);
+ alert(hu);
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var myObj = this.responseText;
@@ -19,7 +19,7 @@ xmlhttp.send();
 <form>
   <div class="form-group">
     <label for="inputRequete">Insérez votre lien</label>
-    <input type="text" id="inputRequete" placeholder="Ex : https://api.blockcypher.com/v1/btc/main"/> 
+    <input type="url" id="inputRequete" placeholder="Ex : https://api.blockcypher.com/v1/btc/main"/> 
   </div>
   </form>
     <div class="row">
