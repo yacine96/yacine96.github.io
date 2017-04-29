@@ -6,8 +6,9 @@
 	<script>
 	function RequeteApi(url)
 { 
-    var url=document.getElementById(myInput).value;
+    var x=document.getElementById("myInput").value;
     var xmlhttp = new XMLHttpRequest();
+    document.getElementById("demo").innerHTML = "You wrote: " + x;
     xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var myObj = this.responseText;
@@ -15,7 +16,7 @@
         document.getElementById("demo").innerHTML = jsonPretty;
     }
 };
-xmlhttp.open("GET",url, true);
+xmlhttp.open("GET",x, true);
 xmlhttp.send();
 }
 	</script>
