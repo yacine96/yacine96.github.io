@@ -1,33 +1,35 @@
+<!DOCTYPE html>
 <html>
 <body>
-	<p>Write something in the text field to trigger a function.</p>
-	<input type="text" id="myInput" oninput="myFunction()">
-	<p id="demo"></p>
-	<script>
-	function RequeteApi()
-{ 
-    var x=document.getElementById("myInput").value;
-    var xmlhttp = new XMLHttpRequest();
+
+<p>Write something in the text field to trigger a function.</p>
+
+<input type="text" id="myInput" oninput="myFunction()">
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myInput").value;
     document.getElementById("demo").innerHTML = "You wrote: " + x;
-    xmlhttp.onreadystatechange = function() {
+    var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var myObj = this.responseText;
         var jsonPretty = JSON.stringify(JSON.parse(myObj),null,2);
         document.getElementById("demo").innerHTML = jsonPretty;
     }
 };
-xmlhttp.open("GET",x, true);
+xmlhttp.open("GET", "https://api.blockcypher.com/v1/btc/main", true);
 xmlhttp.send();
 }
-	</script>
-	<div class="row">
+</script>
+<div class="row">
 	<div class="col-lg-12 col-xs-6">
     	<pre>
         	<code id="demo" class="json kljs"></code>
     	</pre>
 	</div>
 </div>
-	
-
-
-	</body>
+</body>
+</html>
