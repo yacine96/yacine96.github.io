@@ -3,6 +3,7 @@
 <script>
  var xmlhttp = new XMLHttpRequest();
  var hu = document.getElementById("inputRequete").value; 
+ alert(inputRequete);
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var myObj = this.responseText;
@@ -18,7 +19,7 @@ xmlhttp.send();
 <form>
   <div class="form-group">
     <label for="inputRequete">Insérez votre lien</label>
-    <input type="text" id="inputRequete" value="Inserez lien" /> 
+    <input type="text" id="inputRequete"/> 
   </div>
   </form>
     <div class="row">
