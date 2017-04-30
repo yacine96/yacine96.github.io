@@ -13,7 +13,7 @@
         
         function verifAdress(champ)
 {
-   var isAdress = /^[0-9a-zA-Z]{34}$/.test(data);
+   var isAdress = /^[0-9a-zA-Z]{34}$/;
    if(!isAdress.test(champ.value))
    {
       surligne(champ, true);
