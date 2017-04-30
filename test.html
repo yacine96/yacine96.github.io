@@ -1,15 +1,24 @@
+<!doctype html>
 <html>
-<body>
-<p>
-    Cette page ne contient que du HTML.<br />
-    Veuillez taper votre prénom :
-</p>
 
-<form action="http://localhost/test.php" method="post">
-<p>
-    <input type="text" name="prenom" />
-    <input type="submit" value="Valider" />
-</p>
-</form>
+<head>
+    <meta charset="utf-8">
+    <title>Lien API</title>
+</head>
+
+<body>
+    <h1>Informations sur un profil GitHub</h1>
+    <form>
+        <p>
+            <input type="text" name="profil" id="profil" placeholder="Saisissez un lien" required>
+            <input type="submit" value="Rechercher">
+        </p>
+    </form>
+    <div id="infos">
+    </div>
+
+    <script src="../js/ajax.js"></script>
+    <script src="../js/github.js"></script>
 </body>
+
 </html>
