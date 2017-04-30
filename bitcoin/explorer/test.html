@@ -17,6 +17,7 @@
    if(!isAdress.test(champ.value))
    {
       surligne(champ, true);
+      alert("faux!");
       return false;
    }
    else
@@ -26,23 +27,34 @@
    }
 }
         
-        function veriform(f)
+        function verifTransac(champ)
 {
-   var adressOk = verifAdress(f.adress);
-   if(adressOk)
-      return true;
-   else
+   var isTransac = = /^[0-9A-Fa-f]{64}$/;
+   if(!isTransac.test(champ.value))
    {
-      alert("Veuillez remplir correctement tous les champs");
+      surligne(champ, true);
+      alert("faux!");
       return false;
    }
+   else
+   {
+      surligne(champ, false);
+      return true;
+   }
 }
+        
+       
     </script>
     </head>
 <body>
-<form class="form-inline" onsubmit="return veriform(this)">
+<form class="form-inline" onsubmit="return verifAdress(this)">
     <label for="Adress">Adress</label>
     <input type="text" class="form-control" id="inputAdress" name="adress" placeholder="Adress">
   <button type="submit" class="btn btn-default">Send invitation</button>
+  </form>
+ <form class="form-inline" onsubmit="return verifTransac(this)">
+    <label for="Adress">transac</label>
+    <input type="text" class="form-control" id="inputAdress" name="transac" placeholder="Adress">
+  <button type="submit" class="btn btn-default">transac</button>
   </form>
 <body>
