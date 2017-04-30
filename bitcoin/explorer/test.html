@@ -26,6 +26,21 @@
       return true;
    }
 }
+        function veriform2(f){
+        var isTransac=/^[0-9A-Fa-f]{64}$/;
+        if(!isTransac.test(f.transac.value)
+        {
+           surligne(f.transac,true);
+           alert("faux");
+           return true;
+        }
+        else
+        {
+            surligne(f.transac,false);
+            return false;
+        }  
+        }
+           
            function veriform(f)
         {
             var adressok=verifAdress(f.adress);
@@ -48,6 +63,11 @@
 <form class="form-inline" onsubmit="return veriform(this)">
     <label for="Adress">Adress</label>
     <input type="text" class="form-control" id="inputAdress" name="adress" placeholder="Adress">
+  <button type="submit" class="btn btn-default">Send invitation</button>
+  </form>
+    <form class="form-inline" onsubmit="return veriform2(this)">
+    <label for="Adress">Adress</label>
+    <input type="text" class="form-control" id="inputTransac" name="transac" placeholder="t">
   <button type="submit" class="btn btn-default">Send invitation</button>
   </form>
 <body>
