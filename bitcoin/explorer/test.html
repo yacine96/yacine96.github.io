@@ -1,15 +1,48 @@
 <html>
-
+<head>
+    <script>
+        
+        function surligne(champ, erreur)
+{
+   if(erreur)
+      champ.style.backgroundColor = "#fba";
+   else
+      champ.style.backgroundColor = "";
+}
+        
+        
+        function verifAdress(champ)
+{
+   var isAdress = /^[0-9a-zA-Z]{34}$/.test(data);
+   if(!isAdress.test(champ.value))
+   {
+      surligne(champ, true);
+      return false;
+   }
+   else
+   {
+      surligne(champ, false);
+      return true;
+   }
+}
+        
+        function veriform(f)
+{
+   var adressOk = verifAdress(f.adress);
+   if(adressOk)
+      return true;
+   else
+   {
+      alert("Veuillez remplir correctement tous les champs");
+      return false;
+   }
+}
+    </script>
+    </head>
 <body>
-<form class="form-inline">
+<form class="form-inline" onsubmit="return veriform(this)">
     <label for="Adress">Adress</label>
-    <input type="text" class="form-control" id="inputAdress" placeholder="Adress">
+    <input type="text" class="form-control" id="inputAdress" name="adress" placeholder="Adress">
   <button type="submit" class="btn btn-default">Send invitation</button>
   </form>
-  <form class="form-inline">
-    <label for="Adress">Adress</label>
-    <input type="text" class="form-control" id="inputAdress" placeholder="Adress">
- <button type="submit" class="btn btn-default">Send invitation</button>
-</form>
-
 <body>
