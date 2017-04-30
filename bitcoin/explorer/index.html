@@ -17,7 +17,8 @@
       champ.style.backgroundColor = "";
 }
   
-function verifAdress(champ)
+function verifAdress(champ)			/* fonctions de vérifications du format entré en input 
+						et envoie un message d'erreur en cas de fausse entrée.*/
 {
    var isAdress = /^[0-9a-zA-Z]{34}$/;
    if(!isAdress.test(champ.value))
@@ -126,8 +127,8 @@ function verifBlockNum(champ)
     <h1>Explorateur Bitcoin</h1>      
     <p>Formulaire<p>
   </div>
-</div>
-<div class="container-fluid bg-3 text-center">
+</div>						<!-- le formulaire en question:-->
+<div class="container-fluid bg-3 text-center">         
     <form class="form-inline" onsubmit="return verifAdress(this)">
         <label for="inputAdress">Adresse</label>
         <input type="text" class="form-control" name="adress" id="inputAdress" placeholder="Adress" onblur="verifAdress(this)">
