@@ -1,5 +1,4 @@
-    
-34 lines (32 sloc)  1.29 KB
+
 /*
 Exercice : profil GitHub
 */
