@@ -7,18 +7,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script>
-	  var xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        var myObj = this.responseText;
-        var jsonPretty = JSON.stringify(JSON.parse(myObj),null,2);
-        document.getElementById("demo").innerHTML = jsonPretty;
-    }
-};
-xmlhttp.open("GET", "https://bitcoin.mubiz.com/info", true);
-xmlhttp.send();
-   </script>
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
@@ -59,16 +47,26 @@ xmlhttp.send();
 <div class="jumbotron">
   <div class="container text-center">
     <h1>Explorateur Bitcoin</h1>      
-    <p>Info<p>
+    <p>Afficheur API<p>
   </div>
 </div>
 <div class="container-fluid bg-3 text-center">
-	<div class="row">
+<form>
+        <p>
+            <input type="text" name="profil" id="profil" placeholder="Ex: mininginfo" required>
+            <input type="submit" value="Afficher">
+        </p>
+    </form>
+    <div id="demo">
+    </div>
+    <div class="row">
 	<div class="col-lg-12 col-xs-6">
     	<pre>
         	<code id="demo" class="json kljs"></code>
     	</pre>
 	</div>
+     </div>
+    <script src="../js/github.js"></script>
 </div>
 		
 	</div>
