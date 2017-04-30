@@ -10,6 +10,16 @@
       champ.style.backgroundColor = "";
 }
         
+        function veriform(f)
+        {
+            var adressok=verifAdress(f.adress);
+            if (adressok)
+            return true;
+            else
+                alert("non!");
+                return false;
+        }
+        
         
         function verifAdress(champ)
 {
@@ -47,7 +57,7 @@
     </script>
     </head>
 <body>
-<form class="form-inline" onsubmit="return verifAdress(this)">
+<form class="form-inline" onsubmit="return veriform(this)">
     <label for="Adress">Adress</label>
     <input type="text" class="form-control" id="inputAdress" name="adress" placeholder="Adress">
   <button type="submit" class="btn btn-default">Send invitation</button>
