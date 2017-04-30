@@ -10,4 +10,4 @@ formElt.addEventListener("submit", function (e) {
     e.preventDefault();
     var nomProfil = formElt.elements.profil.value;
     ajaxGet("https://api.github.com/users/" + nomProfil);
-};
+});
