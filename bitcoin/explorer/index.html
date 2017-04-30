@@ -7,18 +7,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script>
-    var xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        var myObj = this.responseText;
-        var jsonPretty = JSON.stringify(JSON.parse(myObj),null,2);
-        document.getElementById("demo").innerHTML = jsonPretty;
-    }
-};
-xmlhttp.open("GET", "https://bitcoin.mubiz.com/mininginfo", true);
-xmlhttp.send();
-   </script>
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
@@ -50,6 +38,7 @@ xmlhttp.send();
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="https://yacine96.github.io/index.html">Home</a></li>
+        <li class="active"><a href="https://yacine96.github.io/bitcoin/index.html">Bitcoin</a></li>
       </ul>
     </div>
   </div>
@@ -65,19 +54,19 @@ xmlhttp.send();
 <form>
     <div class="form-group">
         <label for="inputAdress">Adress</label>
-        <input type="text" class="form-control" id="inputAdress" placeholder="Adress">
+        <input type="text" class="form-control" id="inputAdress" placeholder="Adress" onblur="verifAdress(this)">
     </div>
     <div class="form-group">
         <label for="exampleInputTransaction">Transaction Hash</label>
-        <input type="text" class="form-control" id="inputTransaction" placeholder="Hash">
+        <input type="text" class="form-control" id="inputTransaction" placeholder="Hash" onblur="verifTransacHash(this)"> 
     </div>
     <div class="form-group">
-        <label for="exampleInputBlock">Block Hash</label>
-        <input type="text" class="form-control" id="inputBlock" placeholder="Hash">
+        <label for="exampleInputBlock">Bloc Hash</label>
+        <input type="text" class="form-control" id="inputBlock" placeholder="Hash" onblur="verifBlocHash(this)">
     </div>
     <div class="form-group">
         <label for="exampleInputIndex">Block Index</label>
-        <input type="text" class="form-control" id="inputIndex" placeholder="Block Index">
+        <input type="text" class="form-control" id="inputIndex" placeholder="Block Index" onblur="verifBlocNum(this)">
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
 </form>
