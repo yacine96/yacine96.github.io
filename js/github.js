@@ -16,7 +16,8 @@ formElt.addEventListener("submit", function (e) {
             document.getElementById("demo").innerHTML = jsonPretty;
         }
     };
-    xmlhttp.open("GET", "https://api.blockcypher.com/v1/btc/main", true);
+    var nomProfil=formElt.elements.profil.value;
+    xmlhttp.open("GET", "https://bitcoin.mubiz.com/"+nomProfil, true);
     xmlhttp.send();
     
 });
