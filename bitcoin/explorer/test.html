@@ -10,16 +10,7 @@
       champ.style.backgroundColor = "";
 }
         
-        function veriform(f)
-        {
-            var adressok=verifAdress(f.adress);
-            if (adressok)
-            return true;
-            else
-                alert("non!");
-                return false;
-        }
-        
+     
         
         function verifAdress(champ)
 {
@@ -52,6 +43,18 @@
       return true;
    }
 }
+           function veriform(f)
+        {
+            var adressok=verifAdress(f.adress);
+            if (adressok)
+            {return true;}
+            else
+            {
+                alert("non!");
+                return false;
+            }
+        }
+        
         
        
     </script>
