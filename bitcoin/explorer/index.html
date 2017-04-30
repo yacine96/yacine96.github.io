@@ -95,7 +95,6 @@ function verifForm(f)
       return false;
    }
 }
-</script>
   </script>
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
@@ -141,7 +140,7 @@ function verifForm(f)
   </div>
 </div>
 <div class="container-fluid bg-3 text-center">
-<form onsubmit="return ValidationEvent()">
+<form onsubmit="return verifForm(this)">
     <div class="form-group">
         <label for="inputAdress">Adress</label>
         <input type="text" class="form-control" name="adress" id="inputAdress" placeholder="Adress" onblur="verifAdress(this)">
