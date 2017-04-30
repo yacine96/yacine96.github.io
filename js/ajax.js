@@ -10,5 +10,5 @@ function ajaxGet(url) {
             var jsonPretty = JSON.stringify(JSON.parse(myObj),null,2);
             document.getElementById("demo").innerHTML = jsonPretty;
             
-        } 
-}
+        });
+};
