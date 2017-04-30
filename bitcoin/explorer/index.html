@@ -78,9 +78,9 @@ function verifBlockNum(champ)
    }
 }
 
-function verifForm()
+function verifForm(f)
 {
-   var adressOk = verifAdress(document.getElementById("inputAdress").value);
+   var adressOk = verifAdress(f.adress);
    var transacOk = verifTransacHash(f.transac);
    var blochashOk = verifBlocHash(f.blochash);
    var blocknumOk = verifBlockNum(f.blocknum);
@@ -138,7 +138,7 @@ function verifForm()
   </div>
 </div>
 <div class="container-fluid bg-3 text-center">
-<form onsubmit="verifForm()">
+<form onsubmit="return verifForm(this)">
     <div class="form-group">
         <label for="inputAdress">Adress</label>
         <input type="text" class="form-control" name="adress" id="inputAdress" placeholder="Adress" onblur="verifAdress(this)">
