@@ -18,23 +18,6 @@
    if(!isAdress.test(champ.value))
    {
       surligne(champ, true);
-      alert("faux!");
-      return false;
-   }
-   else
-   {
-      surligne(champ, false);
-      return true;
-   }
-}
-        
-        function verifTransac(champ)
-{
-   var isTransac = = /^[0-9A-Fa-f]{64}$/;
-   if(!isTransac.test(champ.value))
-   {
-      surligne(champ, true);
-      alert("faux!");
       return false;
    }
    else
@@ -47,7 +30,9 @@
         {
             var adressok=verifAdress(f.adress);
             if (adressok)
-            {return true;}
+            {
+                return true;
+            }
             else
             {
                 alert("non!");
