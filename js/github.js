@@ -2,7 +2,83 @@
 /*
 Exercice : profil GitHub
 */
+function verifAdress(champ)
+{
+   var isAdress = /^[0-9a-zA-Z]{34}$/.test(data);
+   if(!isAdress.test(champ.value))
+   {
+      surligne(champ, true);
+      return false;
+   }
+   else
+   {
+      surligne(champ, false);
+      return true;
+   }
+}
 
+function verifTransacHash(champ)
+{
+   var isAdress = /^[0-9A-Fa-f]{64}$/.test(data);
+   if(!isAdress.test(champ.value))
+   {
+      surligne(champ, true);
+      return false;
+   }
+   else
+   {
+      surligne(champ, false);
+      return true;
+   }
+}
+
+
+function verifBlocHash(champ)
+{
+   var isAdress = /^[0-9A-Fa-f]{64}$/.test(data);
+   if(!isAdress.test(champ.value))
+   {
+      surligne(champ, true);
+      return false;
+   }
+   else
+   {
+      surligne(champ, false);
+      return true;
+   }
+}
+
+
+function verifBlockNum(champ)
+{
+   var isAdress = /^[0-9]{6}$/.test(data);
+   if(!isAdress.test(champ.value))
+   {
+      surligne(champ, true);
+      return false;
+   }
+   else
+   {
+      surligne(champ, false);
+      return true;
+   }
+}
+
+function verifForm(f)
+{
+   var adressOk = verifAdress(f.adress);
+   var transacOk = verifTransacHash(f.transac);
+   var blochashOk = verifBlocHash(f.blochash);
+   var blocknumOk = verifBlockNum(f.blocknum);
+   
+   if(adressOk && transacOk && blochashOk && blocknumOk)
+      return true;
+   else
+   {
+      alert("Veuillez remplir correctement tous les champs");
+      return false;
+   }
+}
 
 var formElt = document.querySelector("form");
 formElt.addEventListener("submit", function (e) {
